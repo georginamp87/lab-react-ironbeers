@@ -23,21 +23,26 @@ export default class BeersList extends Component {
             console.log('Error while getting beers')
         })
     }
+
     render() {
         const {beers} = this.state
         return (
             <div>
                 <Header/>
                         {
-                            beers.map((beer, beerId)=> {
-                                return 
-                                    <div key={beerId}>
-                                        <img width="35px" src={beer.image_url} alt="beerimage"/>
-                                        <Link to={`/beers/:${beer._id}`}>{beer.name}</Link>
-                                        <p>{beer.tagline}</p>
-                                        <p>Created by: {beer.contributed_by}</p>
-                                    </div>
-                                    })
+                            beers.map((beer)=> {
+                                return (
+                                    <CardGroup border="primary" style={{ width: '18rem' }}>
+                                        <Card key={beer._id}>
+                                        <img width="50px" src={beer.image_url} alt="beerimage"/>
+                                        </Card>
+                                        <Card>
+                                        <Link to={`/beers/:${beer._id}`}><h5>{beer.name}</h5></Link>
+                                        <p className="text-muted">{beer.tagline}</p>
+                                        <Card.Subtitle>Created by: {beer.name}</Card.Subtitle>
+                                    </Card>
+                                    </CardGroup>
+                                    )})
                         }
             </div>
         )
