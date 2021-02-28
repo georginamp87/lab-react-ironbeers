@@ -10,6 +10,7 @@ import NewBeer from './components/NewBeer';
 import {withRouter} from 'react-router-dom'
 
 function App() {
+
   return (
     <div className="App">
      <Switch >
@@ -18,7 +19,9 @@ function App() {
         <Route path="/beers/:beerId" render={(routeProps)=> {
           return <BeerDetails {...routeProps}/>
         }}/>
-        <Route path="/random-beer" component={RandomBeer}/>
+        <Route path="/random-beer" render={(routeProps)=> {
+          return <RandomBeer {...routeProps}/>
+        }}/>
         <Route path="/new-beer" component={NewBeer}/>
         </Switch>
       

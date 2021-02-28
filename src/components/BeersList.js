@@ -1,18 +1,17 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Header from './Header'
-import axios from 'axios'
 import Card from 'react-bootstrap/Card';
 import { CardGroup } from 'react-bootstrap';
+import axios from 'axios'
 
 
 export default class BeersList extends Component {
-
     state = {
         beers : []
-    }
-
-    componentDidMount(){
+      }
+    
+      componentDidMount(){
         axios.get('https://ih-beers-api2.herokuapp.com/beers')
         .then((response)=> {
             this.setState({
@@ -22,7 +21,7 @@ export default class BeersList extends Component {
         .catch(()=> {
             console.log('Error while getting beers')
         })
-    }
+      }
 
     render() {
         const {beers} = this.state
@@ -37,7 +36,7 @@ export default class BeersList extends Component {
                                         <img width="50px" src={beer.image_url} alt="beerimage"/>
                                         </Card>
                                         <Card>
-                                        <Link to={`/beers/:${beer._id}`}><h5>{beer.name}</h5></Link>
+                                        <Link to={`/beers/${beer._id}`}><h5>{beer.name}</h5></Link>
                                         <p className="text-muted">{beer.tagline}</p>
                                         <Card.Subtitle>Created by: {beer.name}</Card.Subtitle>
                                     </Card>
