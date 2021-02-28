@@ -48,18 +48,3 @@ export default class BeersList extends Component {
         )
     }
 }
-
-
-{/* <CardGroup border="primary" style={{ width: '18rem' }}>
-                                            <Card>
-                                                <Card.Img width="35px" src={beer.image_url} variant="top" alt="beerimage"/>
-                                            </Card>
-                                            <Card>
-                                                <Card.Header key={beerId}><Link to={`/beers/:${beer._id}`}>{beer.name}</Link>
-                                                </Card.Header>
-                                                <Card.Text>
-                                                    <p className="text-muted">{beer.tagline}</p>
-                                                    <p>Created by: {beer.contributed_by}</p>
-                                                </Card.Text>
-                                            </Card>
-                                        </CardGroup> */}

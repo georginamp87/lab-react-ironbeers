@@ -6,7 +6,7 @@ export default class Header extends Component {
     render() {
         return (
             <Navbar className="header" bg="primary" variant="dark">
-                <Link to='/'><img width="30px" src='/assets/home.png'/></Link>
+                <Link to='/'><img width="30px" src='/assets/home.png' alt="home-icon"/></Link>
             </Navbar>
         )
     }
